@@ -1,16 +1,20 @@
 # Project 4: Around The U.S.
+### Overview  
+* A description of the project and its functionality  
+* A description of the technologies and techniques used  
+* The link to GitHub Pages  
+  
+**A description of the project and its functionality**    
+  
+This project showcases different people, their hobby r job, and placs they've been to.
+A user can edit the main info items of the page via a popup form.
+  
+**A description of the technologies and techniques used**  
 
-### Overview
-
-* Figma
-* Images
-
-**Figma**
-
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
-
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
+In this project I've implemented adaptive and responsive techniques such as relative values for element sizing. A popup for was created and javascript used to control the form and its input.
+   
+  
+  
+**The link to GitHub Pages**  
+  
+* [Link to the project on GitHub Pages](https://benshur.github.io/web_project_4/)

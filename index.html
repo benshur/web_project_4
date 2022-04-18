@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Around The U.S.">
+  <meta name="keywords" content="Around The U.S.">
+  <meta name="author" content="Ben Shur">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="./favicon.ico">
+  <title>Around The U.S.</title>
+  <link rel="stylesheet" href="./pages/index.css" />
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+          <div class = "header__elements">
+            <img class="header__elements-logo" src = "./images/logo.svg"
+              alt="Around The U.S. Logo"/>
+            <div class="header__elements-line"></div>
+          </div>
+        </header>
+     <main class="content">
+        <section class="profile">
+            <div class = "profile__elements">
+              <img class="profile__elements_avatar" src="./images/avatar.png" alt="avatar"/>
+              <div class = "profile__elements_info">
+                <div class = "profile__elements_info_name">
+                  <h1 class = "profile__elements_info-title">Jacques Cousteau</h1>
+                  <button id = "edit_button" class = "profile__elements_info-editbtn"></button>
+                </div>
+                <p class = "profile__elements_info-subtitle">Explorer</p>
+              </div>
+              <button class="profile__elements_addbtn"></button>
+            </div>
+        </section>
+        
+        <section class="gallery">
+          <ul class="gallery__container">          
+              <li class = "gallery__item">
+                <img class = "gallery__item_image" src = "./images/kirill-pershin-1088404-unsplash.png" alt="Yosemite Valley"/>
+                <div class = "gallery__item_info"> 
+                  <h2 class = "gallery__item_info-text">Yosemite Valley</h2>
+                  <div class = "gallery__item_info-heart"></div>
+                </div>
+              </li>
+              <li class = "gallery__item">
+                <img class = "gallery__item_image" src = "./images/kirill-pershin-1404681-unsplash.png" alt="Lake Louisey"/>
+                <div class = "gallery__item_info">
+                  <h2 class = "gallery__item_info-text">Lake Louise</h2>
+                  <div class = "gallery__item_info-heart"></div>
+                </div>
+              </li>
+              <li class = "gallery__item">
+                <img class = "gallery__item_image" src = "./images/kirill-pershin-1556355-unsplash.png" alt="Bald Mountains"/>
+                <div class = "gallery__item_info">
+                  <h2 class = "gallery__item_info-text">Bald Mountains</h2>
+                  <div class = "gallery__item_info-heart"></div>
+                </div>
+              </li>
+              <li class = "gallery__item">
+                <img class = "gallery__item_image" src = "./images/kirill-pershin-1404681-unsplash_(1).png" alt="Latemar"/>
+                <div class = "gallery__item_info">
+                  <h2 class = "gallery__item_info-text">Latemar</h2>
+                  <div class = "gallery__item_info-heart"></div>
+                </div>
+              </li>
+              <li class = "gallery__item">
+                <img class = "gallery__item_image" src = "./images/kirill-pershin-1556355-unsplash_(1).png" alt="Vanoise Nationa park"/>
+                <div class = "gallery__item_info">
+                  <h2 class = "gallery__item_info-text">Vanoise Nationa...</h2>
+                  <div class = "gallery__item_info-heart"></div>
+                </div>
+              </li>
+              <li class = "gallery__item">
+                <img class = "gallery__item_image" src = "./images/kirill-pershin-1088404-unsplash_(1).png" alt="Lago di Braies"/>
+                <div class = "gallery__item_info">
+                  <h2 class = "gallery__item_info-text">Lago di Braies</h2>
+                  <div class = "gallery__item_info-heart"></div>
+                </div>
+              </li>                     
+          </ul>
+        </section>
+        <section class = "popup">
+            <div class = "popup__container_overlay"></div>
+            <div class = "popup__container">
+              <button class = "popup__container_form-close" type= "button"></button>
+              <form class = "popup__container_form" name="edit_profile">
+                <h3 class = "popup__container_form-title">Edit profile</h3>
+                <input class = "popup__container_form-name" type="text" name="name" placeholder="Name">
+                <div class = "popup__container_form-line"></div>
+                <input class = "popup__container_form-job" type="text" name="title" placeholder="About me">
+                <div class = "popup__container_form-line"></div>
+                <button class = "popup__container_form-submit" type="submit">Save</button>
+              </form>
+            </div>
+          </section>
+      </main>
+        
+        <footer class="footer">
+          <p class="footer__copyright"> © 2022 Ben Shur </p>
+        </footer>
+   </div>
+   <script src="./script/script.js"></script>
+</body>
+</html>
