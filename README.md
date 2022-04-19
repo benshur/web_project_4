@@ -6,7 +6,7 @@
   
 **A description of the project and its functionality**    
   
-This project showcases different people, their hobby r job, and placs they've been to.
+This project showcases different people, their hobby or job, and places they've been to.
 A user can edit the main info items of the page via a popup form.
   
 **A description of the technologies and techniques used**  
