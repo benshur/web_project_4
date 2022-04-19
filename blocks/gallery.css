@@ -93,7 +93,7 @@
     }
   }
 
-  @media only screen and (max-width: 590px) {
+  @media only screen and (max-width: 610px) {
     .gallery__container {
       max-width: 282px;
     }
