@@ -2,8 +2,8 @@ let openPopup = document.querySelector('.profile__editbtn');
 let popupContainer = document.querySelector('.popup');
 let popupClose = document.querySelector('.popup__close');
 let formElement = document.querySelector('.popup__form');
-let formName = document.querySelector('.popup__name');
-let formJob = document.querySelector('.popup__job');
+let formName = document.querySelector('.popup__text_type_name');
+let formJob = document.querySelector('.popup__text_type_job');
 let profileName = document.querySelector('.profile__title');
 let profileJob = document.querySelector('.profile__subtitle');
 
