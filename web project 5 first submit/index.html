@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Around The U.S.">
+  <meta name="keywords" content="Around The U.S.">
+  <meta name="author" content="Ben Shur">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="./favicon.ico">
+  <title>Around The U.S.</title>
+  <link rel="stylesheet" href="./pages/index.css" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header__elements">
+        <img class="logo" src="./images/logo.svg" alt="Around The U.S. Logo" />
+      </div>
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__elements">
+          <img class="profile__avatar" src="./images/avatar.png" alt="avatar" />
+          <div class="profile__info">
+            <div class="profile__name">
+              <h1 class="profile__title">Jacques Cousteau</h1>
+              <button id="edit_button" class="profile__editbtn" type="button"></button>
+            </div>
+            <p class="profile__subtitle">Explorer</p>
+          </div>
+          <button class="profile__addbtn" type="button"></button>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <ul class="gallery__container"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">© 2022 Ben Shur</p>
+    </footer>
+    <div class="popup popup_profile">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form" name="edit_profile">
+          <h3 class="popup__title">Edit profile</h3>
+          <input class="popup__text popup__text_type_name" type="text" name="name" placeholder="Name" required>
+          <input class="popup__text popup__text_type_job" type="text" name="job" placeholder="About me" required>
+          <button class="popup__submit" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_place">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form" name="edit_profile">
+          <h3 class="popup__title">New place</h3>
+          <input class="popup__text popup__text_type_title" type="text" name="title" placeholder="Title" required>
+          <input class="popup__text popup__text_type_link" type="text" name="link" placeholder="Image link" required>
+          <button class="popup__submit" type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup__image">
+      <div class="popup__image__container">
+        <button class="popup__image__close" type="button"></button>
+        <div class="popup__image__image"></div>
+        <p class = "popup__image__text"></p>
+      </div>
+    </div>
+    <div class="popup__image__large">
+      <div class="popup__image__large__container">
+        <button class="popup__image__large__close" type="button"></button>
+        <div class="popup__image__large__image"></div>
+        <p class = "popup__image__large__text"></p>
+      </div>
+    </div>
+  </div>
+  <script src="./script/script.js"></script>
+</body>
+
+</html>

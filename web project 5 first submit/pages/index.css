@@ -1,0 +1,10 @@
+@import "../vendor/normalize.css";
+@import "../fonts/Inter_Web/inter.css";
+@import "../blocks/page.css";
+@import "../blocks/header.css";
+@import "../blocks/logo.css";
+@import "../blocks/profile.css";
+@import "../blocks/gallery.css";
+@import "../blocks/footer.css";
+@import "../blocks/popup_image.css";
+@import "../blocks/popup.css";
