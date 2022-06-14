@@ -1,4 +1,4 @@
-.popup__image {
+.open__image {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -13,13 +13,13 @@
     transition: transform .3s, opacity .3s, visibility .3s .3s;
 }
 
-.popup__image_opened {
+.open__image_opened {
     visibility: visible;
     opacity: 1;
     transition-delay: 0s;
 }
 
-.popup__image__container {
+.open__image__container {
     align-self: center;
     width: 508px;
     height: fit-content;
@@ -32,7 +32,7 @@
     padding: 0;
 }
 
-.popup__image__image {
+.open__image__image {
     margin: 0;
     padding: 0;
     position: relative;
@@ -43,7 +43,7 @@
     background-size: cover;
 }
 
-.popup__image__text {
+.open__image__text {
     position: relative;
     margin: 0;
     padding: 0;
@@ -63,7 +63,7 @@
     overflow: hidden;
 }
 
-.popup__image__close {
+.open__image_close {
     position: relative;
     align-self: flex-end;
     width: 34px;
@@ -74,7 +74,7 @@
     margin-bottom: 2px;
 }
 
-.popup__image__close:hover {
+.open__image_close:hover {
     cursor: pointer;
     opacity: 0.6;
 }
@@ -85,7 +85,7 @@
         height: fit-content;
     }
 
-    .popup__image__image {
+    .open__image__image {
         margin: 0;
         padding: 0;
         position: relative;
@@ -96,7 +96,7 @@
         background-size: cover;
     }
 
-    .popup__image__close {
+    .open__image_close {
         width: 30px;
         height: 30px;
         margin-right: 8px;
