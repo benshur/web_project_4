@@ -31,7 +31,7 @@
 
 @media only screen and (max-width: 320px) {
   .footer {
-    width: 320px
+    width: 320px;
   }
 
   .footer__copyright {
