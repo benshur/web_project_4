@@ -35,58 +35,14 @@
       </section>
 
       <section class="gallery">
-        <ul class="gallery__container">
-          <li class="gallery__item">
-            <img class="gallery__image" src="./images/kirill-pershin-1088404-unsplash.png" alt="Yosemite Valley" />
-            <div class="gallery__info">
-              <h2 class="gallery__text">Yosemite Valley</h2>
-              <button class="gallery__heart" type="button"></button>
-            </div>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="Lake Louisey" />
-            <div class="gallery__info">
-              <h2 class="gallery__text">Lake Louise</h2>
-              <button class="gallery__heart" type="button"></button>
-            </div>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Bald Mountains" />
-            <div class="gallery__info">
-              <h2 class="gallery__text">Bald Mountains</h2>
-              <button class="gallery__heart" type="button"></button>
-            </div>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__image" src="./images/kirill-pershin-1404681-unsplash_(1).png" alt="Latemar" />
-            <div class="gallery__info">
-              <h2 class="gallery__text">Latemar</h2>
-              <button class="gallery__heart" type="button"></button>
-            </div>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__image" src="./images/kirill-pershin-1556355-unsplash_(1).png"
-              alt="Vanoise Nationa park" />
-            <div class="gallery__info">
-              <h2 class="gallery__text">Vanoise National Park</h2>
-              <button class="gallery__heart" type="button"></button>
-            </div>
-          </li>
-          <li class="gallery__item">
-            <img class="gallery__image" src="./images/kirill-pershin-1088404-unsplash_(1).png" alt="Lago di Braies" />
-            <div class="gallery__info">
-              <h2 class="gallery__text">Lago di Braies</h2>
-              <button class="gallery__heart" type="button"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="gallery__container"></ul>
       </section>
     </main>
 
     <footer class="footer">
       <p class="footer__copyright">© 2022 Ben Shur</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup_profile">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
         <form class="popup__form" name="edit_profile">
@@ -95,6 +51,31 @@
           <input class="popup__text popup__text_type_job" type="text" name="job" placeholder="About me" required>
           <button class="popup__submit" type="submit">Save</button>
         </form>
+      </div>
+    </div>
+    <div class="popup popup_place">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form" name="edit_profile">
+          <h3 class="popup__title">New place</h3>
+          <input class="popup__text popup__text_type_title" type="text" name="title" placeholder="Title" required>
+          <input class="popup__text popup__text_type_link" type="text" name="link" placeholder="Image link" required>
+          <button class="popup__submit" type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup__image">
+      <div class="popup__image__container">
+        <button class="popup__image__close" type="button"></button>
+        <div class="popup__image__image"></div>
+        <p class = "popup__image__text"></p>
+      </div>
+    </div>
+    <div class="popup__image__large">
+      <div class="popup__image__large__container">
+        <button class="popup__image__large__close" type="button"></button>
+        <div class="popup__image__large__image"></div>
+        <p class = "popup__image__large__text"></p>
       </div>
     </div>
   </div>
