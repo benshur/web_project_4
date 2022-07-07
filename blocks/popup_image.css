@@ -10,7 +10,7 @@
     background: rgba(0, 0, 0, .5);
     visibility: hidden;
     opacity: 0;
-    transition: transform .3s, opacity .3s, visibility .3s .3s;
+    transition: opacity .5s, visibility .5s .5s;
 }
 
 .popup-image_opened {
