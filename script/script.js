@@ -26,55 +26,62 @@ const initialCards = [
 ];
 
 const galleryContainer = document.querySelector('.gallery__container');
+const galleryItemTemplate = document.querySelector('#gallery__template').content;
+const popupImageContainer = document.querySelector('.popup-image');
+const popupImageImage = popupImageContainer.querySelector('.popup-image__image');
+const popupImageText = popupImageContainer.querySelector('.popup-image__text');
 
-initialCards.forEach((card) => {
-    renderCard(card);
-})
+initialCards.forEach(renderCard);
 
-let openProfilePopup = document.querySelector('.profile__editbtn');
-let popupProfileContainer = document.querySelector('.popup_profile');
-let popupProfileClose = popupProfileContainer.querySelector('.popup__close');
-let formElementProfile = popupProfileContainer.querySelector('.popup__form');
-let formNameProfile = popupProfileContainer.querySelector('.popup__text_type_name');
-let formJobProfile = popupProfileContainer.querySelector('.popup__text_type_job');
-let profileName = document.querySelector('.profile__title');
-let profileJob = document.querySelector('.profile__subtitle');
+const openProfileFormPopup = document.querySelector('.profile__editbtn');
+const popupProfileContainer = document.querySelector('.popup_profile');
+const popupProfileClose = popupProfileContainer.querySelector('.popup__close');
+const formElementProfile = popupProfileContainer.querySelector('.popup__form');
+const formNameProfile = popupProfileContainer.querySelector('.popup__text_type_name');
+const formJobProfile = popupProfileContainer.querySelector('.popup__text_type_job');
+const profileName = document.querySelector('.profile__title');
+const profileJob = document.querySelector('.profile__subtitle');
 
-openProfilePopup.addEventListener('click', function () { openPopup(popupProfileContainer) });
+openProfileFormPopup.addEventListener('click', openProfilePopup);
 popupProfileClose.addEventListener('click', function () { closePopup(popupProfileContainer) });
 formElementProfile.addEventListener("submit", submitProfileForm);
 
-let openPlacePopup = document.querySelector('.profile__addbtn');
-let popupPlaceContainer = document.querySelector('.popup_place');
-let popupPlaceClose = popupPlaceContainer.querySelector('.popup__close');
-let formElementPlace = popupPlaceContainer.querySelector('.popup__form');
-let formTitlePlace = popupPlaceContainer.querySelector('.popup__text_type_title');
-let formLinkPlace = popupPlaceContainer.querySelector('.popup__text_type_link');
+const openPlaceFormPopup = document.querySelector('.profile__addbtn');
+const popupPlaceContainer = document.querySelector('.popup_place');
+const popupPlaceClose = popupPlaceContainer.querySelector('.popup__close');
+const formElementPlace = popupPlaceContainer.querySelector('.popup__form');
+const formTitlePlace = popupPlaceContainer.querySelector('.popup__text_type_title');
+const formLinkPlace = popupPlaceContainer.querySelector('.popup__text_type_link');
 
-openPlacePopup.addEventListener('click', function () { openPopup(popupPlaceContainer) });
+openPlaceFormPopup.addEventListener('click', function () { openPopup(popupPlaceContainer) });
 popupPlaceClose.addEventListener('click', function () { closePopup(popupPlaceContainer) });
 formElementPlace.addEventListener("submit", submitPlaceForm);
 
-let placeList = galleryContainer.querySelectorAll('.gallery__item');
-let placeLikeBtnArray = galleryContainer.querySelectorAll('.gallery__heart');
-let placeImageArray = galleryContainer.querySelectorAll('.gallery__image');
-let placeTextArray = galleryContainer.querySelectorAll('.gallery__text');
-let placeTrashArray = galleryContainer.querySelectorAll('.gallery__trash');
-let popupImageContainer = document.querySelector('.popup-image');
-let popupImageCloseBtn = popupImageContainer.querySelector('.popup-image__close');
-let popupImageText = popupImageContainer.querySelector('.popup-image__text');
-let popupImageImage = popupImageContainer.querySelector('.popup-image__image');
+const placeList = galleryContainer.querySelectorAll('.gallery__item');
+const placeLikeBtnArray = galleryContainer.querySelectorAll('.gallery__heart');
+const placeImageArray = galleryContainer.querySelectorAll('.gallery__image');
+const placeTextArray = galleryContainer.querySelectorAll('.gallery__text');
+const placeTrashArray = galleryContainer.querySelectorAll('.gallery__trash');
+const popupImageCloseBtn = popupImageContainer.querySelector('.popup-image__close');
 
-popupImageCloseBtn.addEventListener("click", closePopupImage);
+popupImageCloseBtn.addEventListener("click", function () { closePopup(popupImageContainer) });
 
-function openPopup(popup) {
-    popup.classList.add("popup_opened");
+function openProfilePopup() {
+    openPopup(popupProfileContainer);
+    fillProfileForm();
+}
+
+function fillProfileForm() {
     formNameProfile.value = profileName.textContent;
     formJobProfile.value = profileJob.textContent;
 }
 
+function openPopup(popup) {
+    popup.classList.add("popup_opened");
+}
+
 function closePopup(popup) {
-    popup.classList.toggle("popup_opened");
+    popup.classList.remove("popup_opened");
 }
 
 function submitProfileForm(evt) {
@@ -95,8 +102,9 @@ function submitPlaceForm(evt) {
     formElementPlace.reset();
 }
 
-function closePopupImage() {
-    popupImageContainer.classList.toggle("popup-image_opened");
+function fillPopupImage(newImage, newText) {
+    popupImageImage.setAttribute("style", "background-image: url(" + newImage.src + ")");
+    popupImageText.textContent = newText.textContent;
 }
 
 function renderCard(card) {
@@ -105,23 +113,23 @@ function renderCard(card) {
 }
 
 function createCard(card) {
-    const listItem = document.createElement("li");
-    listItem.className = "gallery__item";
-    listItem.innerHTML += "<img class='gallery__image' src='" + card.link + "'" + "alt= Photo of " + card.name + "'" + "/><button class= 'gallery__trash' type='button'></button><div class='gallery__info'><h2 class='gallery__text'>" + card.name + "</h2><button class='gallery__heart' type='button'></button></div>";
+    const listItem = galleryItemTemplate.cloneNode(true);
+    listItem.querySelector(".gallery__image").src = card.link;
+    listItem.querySelector(".gallery__text").textContent = card.name;
     let newHeart = listItem.querySelector('.gallery__heart');
     newHeart.addEventListener("click", function clickLike() {
         newHeart.classList.toggle("gallery__heart_clicked");
     });
     let newTrash = listItem.querySelector('.gallery__trash');
     newTrash.addEventListener("click", function deletePlace() {
-        galleryContainer.removeChild(listItem);
+        this.parentNode.remove();
     });
     let newImage = listItem.querySelector('.gallery__image');
     let newText = listItem.querySelector('.gallery__text');
-    newImage.addEventListener("click", function openImagePopup() {
-        popupImageImage.setAttribute("style", "background-image: url(" + newImage.src + ")");
-        popupImageText.textContent = newText.textContent;
-        popupImageContainer.classList.toggle("popup-image_opened");
+    newImage.addEventListener('click', function () {
+        openPopup(popupImageContainer);
+        fillPopupImage(newImage, newText);
     });
+
     return listItem;
 }
