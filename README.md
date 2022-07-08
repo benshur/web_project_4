@@ -17,4 +17,4 @@ In this project I've implemented adaptive and responsive techniques such as rela
   
 **The link to GitHub Pages**  
   
-* [Link to the project on GitHub Pages](https://liorshur.github.io/web_project_4/)
+* [Link to the project on GitHub Pages](https://benshur.github.io/web_project_4/)
