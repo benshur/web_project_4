@@ -115,17 +115,18 @@ function renderCard(card) {
 function createCard(card) {
     const listItem = galleryItemTemplate.cloneNode(true);
     listItem.querySelector(".gallery__image").src = card.link;
+    listItem.querySelector(".gallery__image").alt = "a photo of " + card.name;
     listItem.querySelector(".gallery__text").textContent = card.name;
-    let newHeart = listItem.querySelector('.gallery__heart');
+    const newHeart = listItem.querySelector('.gallery__heart');
     newHeart.addEventListener("click", function clickLike() {
         newHeart.classList.toggle("gallery__heart_clicked");
     });
-    let newTrash = listItem.querySelector('.gallery__trash');
+    const newTrash = listItem.querySelector('.gallery__trash');
     newTrash.addEventListener("click", function deletePlace() {
         this.parentNode.remove();
     });
-    let newImage = listItem.querySelector('.gallery__image');
-    let newText = listItem.querySelector('.gallery__text');
+    const newImage = listItem.querySelector('.gallery__image');
+    const newText = listItem.querySelector('.gallery__text');
     newImage.addEventListener('click', function () {
         openPopup(popupImageContainer);
         fillPopupImage(newImage, newText);
