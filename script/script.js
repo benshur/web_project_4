@@ -116,7 +116,7 @@ function createCard(card) {
     const listItem = galleryItemTemplate.cloneNode(true);
     const imageElement = listItem.querySelector(".gallery__image");
     imageElement.src = card.link;
-    imageElement.alt = "a photo of " + card.name;
+    imageElement.alt = `a photo of ${card.name}`;
     listItem.querySelector(".gallery__text").textContent = card.name;
     const newHeart = listItem.querySelector('.gallery__heart');
     newHeart.addEventListener("click", function clickLike() {
