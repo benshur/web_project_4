@@ -30,6 +30,7 @@ const galleryItemTemplate = document.querySelector('#gallery__template').content
 const popupImageContainer = document.querySelector('.popup-image');
 const popupImageImage = popupImageContainer.querySelector('.popup-image__image');
 const popupImageText = popupImageContainer.querySelector('.popup-image__text');
+let activePopup = "";
 
 initialCards.forEach(renderCard);
 
@@ -78,10 +79,13 @@ function fillProfileForm() {
 
 function openPopup(popup) {
     popup.classList.add("popup_opened");
+    activePopup = popup;
+    checkEscapePressed(activePopup);
 }
 
 function closePopup(popup) {
     popup.classList.remove("popup_opened");
+    document.removeEventListener('keydown', function(){});
 }
 
 function submitProfileForm(evt) {
@@ -134,4 +138,34 @@ function createCard(card) {
     });
 
     return listItem;
+}
+
+let identifyClick = 0;
+const popupList = document.querySelectorAll(".popup");
+const formElementList = document.querySelectorAll(".popup__inner");
+
+popupList.forEach((popupElement) => {
+    popupElement.addEventListener("mousedown", function () { evaluatePopupClickClose(popupElement) });
+});
+
+formElementList.forEach((Element) => {
+    Element.addEventListener("mousedown", () => { identifyClick++ });
+});
+
+function evaluatePopupClickClose(popupElement) {
+    identifyClick++;
+    if (identifyClick == 1) {
+        closePopup(popupElement);
+    }
+    identifyClick = 0;
+}
+
+function checkEscapePressed(activePopup) {
+    document.addEventListener('keydown', function (event) {
+        const key = event.key;
+        if (key === "Escape") {
+            closePopup(activePopup);
+            document.removeEventListener('keydown', function(){});
+        };
+    });
 }
