@@ -10,7 +10,7 @@
     background: rgba(0, 0, 0, .5);
     visibility: hidden;
     opacity: 0;
-    transition: opacity .5s, visibility .5s .5s; 
+    transition: opacity .5s, visibility .5s .5s;
 }
 
 .popup_opened {
@@ -61,6 +61,23 @@
     margin-top: 34px;
 }
 
+.popup__input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    width: 358px;
+    height: 80px;
+    border: none;
+    outline: none;
+    white-space: normal;
+}
+
 .popup__text {
     position: relative;
     margin: 0;
@@ -72,14 +89,90 @@
     font-size: 14px;
     line-height: 17px;
     width: 358px;
-    margin-top: 29.74px;
     padding-bottom: 13.26px;
     border: none;
     outline: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.popup__text_type_name-error {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #FF0000;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    width: 358px;
+    height: 1px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    white-space: normal;
+}
+
+.popup__text_type_job-error {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #FF0000;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    width: 358px;
+    height: 1px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    white-space: normal;
+}
+
+.popup__text_type_title-error {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #FF0000;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    width: 358px;
+    height: 1px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    white-space: normal;
+}
+
+.popup__text_type_link-error {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #FF0000;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    width: 358px;
+    height: 1px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    white-space: normal;
+}
+
+.popup__text_type_error {
+    border-bottom: 1px solid #FF0000;
 }
 
 .popup__text:first-of-type {
@@ -126,6 +219,26 @@
     opacity: .8;
 }
 
+.popup__submit_inactive {
+    width: 358px;
+    height: 50.15px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(0, 0, 0, .2);
+    background: #E5E5E5;
+    border-radius: 2px;
+    margin-top: 48px;
+    margin-bottom: 26px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    pointer-events: none;
+}
+
 
 @media only screen and (max-width: 610px) {
 
@@ -148,14 +261,45 @@
 
     .popup__text {
         width: 238px;
-        margin-top: 30px;
+        margin-top: 10px;
+    }
+
+    .popup__input {
+        width: 238px;
+        height: 90px;
+        margin-top: 0px;
+    }
+
+    .popup__input:last-of-type {
+        width: 238px;
+        margin-bottom: 30px;
+    }
+
+    .popup__text_type-error {
+        width: 238px;
+    }
+
+    .popup__text_type_name-error {
+        width: 238px;
+    }
+
+    .popup__text_type_job-error {
+        width: 238px;
+    }
+
+    .popup__text_type_title-error {
+        width: 238px;
+    }
+
+    .popup__text_type_link-error {
+        width: 238px;
     }
 
     .popup__text:first-of-type {
         margin-top: 76px;
     }
 
-    
+
     .popup__close {
         width: 22px;
         height: 22px;
@@ -163,6 +307,15 @@
     }
 
     .popup__submit {
+        width: 238px;
+        height: 46px;
+        font-size: 14px;
+        line-height: 17px;
+        margin-top: 46px;
+        margin-bottom: 25px;
+    }
+
+    .popup__submit_inactive {
         width: 238px;
         height: 46px;
         font-size: 14px;

@@ -101,6 +101,11 @@
   opacity: 0.6;
 }
 
+.profile__editbtn:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
 .profile__addbtn {
   position: relative;
   background: url('../images/add_button.svg');
@@ -114,6 +119,11 @@
 .profile__addbtn:hover {
   cursor: pointer;
   opacity: 0.6;
+}
+
+.profile__addbtn:focus {
+  outline-color: transparent;
+  outline-style: none;
 }
 
 
