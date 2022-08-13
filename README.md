@@ -23,6 +23,8 @@ Form validation was coded with javascript while disabling built-in browser valid
 * [Link to the project on GitHub Pages](https://benshur.github.io/web_project_4/)
 
 
+
+
 ![image](https://user-images.githubusercontent.com/99538422/184496701-70c0e5b7-5dc8-419d-aea3-e5db3f3ee3e6.png)
 
 ![image](https://user-images.githubusercontent.com/99538422/184496795-7a2c5ec2-11e3-479f-9806-6b427062cd1d.png)
