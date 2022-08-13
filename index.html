@@ -53,38 +53,57 @@
         </div>
       </li>
     </template>
-    
+
     <div class="popup popup_profile">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
-        <form class="popup__form" name="edit_profile">
+        <form class="popup__form popup__inner" name="edit_profile" novalidate>
           <h3 class="popup__title">Edit profile</h3>
-          <input class="popup__text popup__text_type_name" type="text" name="name" placeholder="Name" required>
-          <input class="popup__text popup__text_type_job" type="text" name="job" placeholder="About me" required>
-          <button class="popup__submit" type="submit">Save</button>
+          <label class="popup__input">
+            <input id="popup__text_type_name" class="popup__text popup__text_type_name" type="text" name="name"
+              placeholder="Name" minlength="2" maxlength="40" required>
+            <span id="popup__text_type_name" class="popup__text_type_name-error"></span>
+          </label>
+          <label class="popup__input">
+            <input id="popup__text_type_job" class="popup__text popup__text_type_job" type="text" name="job"
+              placeholder="About me" minlength="2" maxlength="200" required>
+            <span id="popup__text_type_job" class="popup__text_type_job-error"></span>
+          </label>
+          <button class="popup__submit popup__submit_inactive" type="submit">Save</button>
         </form>
       </div>
     </div>
     <div class="popup popup_place">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
-        <form class="popup__form" name="edit_profile">
+        <form class="popup__form popup__inner" name="new_place" novalidate>
           <h3 class="popup__title">New place</h3>
-          <input class="popup__text popup__text_type_title" type="text" name="title" placeholder="Title" required>
-          <input class="popup__text popup__text_type_link" type="text" name="link" placeholder="Image link" required>
-          <button class="popup__submit" type="submit">Create</button>
+          <label class="popup__input">
+            <input id="popup__text_type_title" class="popup__text popup__text_type_title" type="text" name="title"
+              placeholder="Title" minlength="1" maxlength="30" required>
+            <span id="popup__text_type_title" class="popup__text_type_title-error"></span>
+          </label>
+          <label class="popup__input">
+            <input id="popup__text_type_link" class="popup__text popup__text_type_link" type="url" name="link"
+              placeholder="Image link" required>
+            <span id="popup__text_type_link" class="popup__text_type_link-error"></span>
+          </label>
+          <button class="popup__submit popup__submit_inactive" type="submit">Create</button>
         </form>
       </div>
     </div>
-    <div class="popup-image">
+    <div class="popup popup-image">
       <div class="popup-image__container">
         <button class="popup-image__close" type="button"></button>
-        <div class="popup-image__image"></div>
+        <div class="popup-image__image popup__inner"></div>
         <p class="popup-image__text"></p>
       </div>
     </div>
   </div>
+  <!--<script src="./script/scriptTest.js"></script>
+  <script src="./script/validateTest.js"></script>-->
   <script src="./script/script.js"></script>
+  <script src="./script/validate.js"></script>
 </body>
 
 </html>
