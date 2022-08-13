@@ -18,3 +18,6 @@ In this project I've implemented adaptive and responsive techniques such as rela
 **The link to GitHub Pages**  
   
 * [Link to the project on GitHub Pages](https://benshur.github.io/web_project_4/)
+
+
+![image](https://user-images.githubusercontent.com/99538422/184496701-70c0e5b7-5dc8-419d-aea3-e5db3f3ee3e6.png)
