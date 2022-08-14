@@ -79,13 +79,11 @@ function fillProfileForm() {
 
 function openPopup(popup) {
     popup.classList.add("popup_opened");
-    activePopup = popup;
-    checkEscapePressed(activePopup);
+    checkEscapePressed(popup);
 }
 
 function closePopup(popup) {
     popup.classList.remove("popup_opened");
-    document.removeEventListener('keydown', function(){});
 }
 
 function submitProfileForm(evt) {
@@ -160,12 +158,12 @@ function evaluatePopupClickClose(popupElement) {
     identifyClick = 0;
 }
 
-function checkEscapePressed(activePopup) {
+function checkEscapePressed(popup) {
     document.addEventListener('keydown', function (event) {
         const key = event.key;
         if (key === "Escape") {
-            closePopup(activePopup);
-            document.removeEventListener('keydown', function(){});
+            closePopup(popup);
+            document.removeEventListener('keydown', function () { });
         };
     });
 }
