@@ -30,7 +30,6 @@ const galleryItemTemplate = document.querySelector('#gallery__template').content
 const popupImageContainer = document.querySelector('.popup-image');
 const popupImageImage = popupImageContainer.querySelector('.popup-image__image');
 const popupImageText = popupImageContainer.querySelector('.popup-image__text');
-let activePopup = "";
 
 initialCards.forEach(renderCard);
 
@@ -52,7 +51,7 @@ const formElementPlace = popupPlaceContainer.querySelector('.popup__form');
 const formTitlePlace = popupPlaceContainer.querySelector('.popup__text_type_title');
 const formLinkPlace = popupPlaceContainer.querySelector('.popup__text_type_link');
 
-openPlaceFormPopup.addEventListener('mousedown', function () { addCrardPopup(popupPlaceContainer) });
+openPlaceFormPopup.addEventListener('mousedown', function () { openCardPopup(popupPlaceContainer) });
 formElementPlace.addEventListener("submit", submitPlaceForm);
 
 const popups = document.querySelectorAll('.popup')
@@ -70,10 +69,10 @@ popups.forEach((popup) => {
 
 function closeByEscape(evt) {
     if (evt.key === 'Escape') {
-      const openedPopup = document.querySelector('.popup_opened')
-      closePopup(openedPopup);
+        const openedPopup = document.querySelector('.popup_opened')
+        closePopup(openedPopup);
     }
-  }
+}
 
 function openProfilePopup() {
     openPopup(popupProfileContainer);
@@ -85,7 +84,8 @@ function fillProfileForm() {
     formJobProfile.value = profileJob.textContent;
 }
 
-function addCrardPopup() {
+function openCardPopup() {
+    placeSubmitBtn.disabled = true;
     placeSubmitBtn.classList.add("popup__submit_inactive");
     openPopup(popupPlaceContainer);
 }
@@ -139,7 +139,7 @@ function createCard(card) {
         newHeart.classList.toggle("gallery__heart_clicked");
     });
     const newTrash = listItem.querySelector('.gallery__trash');
-    newTrash.addEventListener("click", function(evt) {
+    newTrash.addEventListener("click", function (evt) {
         evt.target.closest('.gallery__item').remove();
     });
     const newText = listItem.querySelector('.gallery__text');
